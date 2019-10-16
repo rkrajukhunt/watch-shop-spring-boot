@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="view" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 8px 10px 8px 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 8px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 10px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+<title>Home Page</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"></link>
+		<link rel="stylesheet" type="text/css" href="./css/admin.css"></link>
+</head>
+<body>
+	<form action="view" method="post">
+		<table>
+			<tr>
+				<td>
+					<!-- <img src="./images/RTI_LOGO.png">-->
+				</td>
+			</tr>
+			<tr>
+				<td><center>
+					<table style="background-color: #FFDEAD;width: 100%;height: 100px">
+						
+						
+						<tr>
+							<td colspan="4">
+								<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search watchs" title="Type RTI Id" style="margin-top: 20px;font-size: 17px">
+<table id="myTable">
+  <tr class="header">
+    <th>PID</th>
+    <th>PNM</th>
+    <th>PRICE</th>
+    <th>IMAGE</th>
+    <th>Delete</th>
+  </tr>
+  <tr th:each="user : ${users}">
+    <td th:text="${user.pid}"></td>
+    <td th:text="${user.pnm}"></td>
+    <td th:text="${user.price}"></td>
+ <td th:text="${user.img}"></td>
+    <td><a href ='#' type="submit" name="btn3" th:value="${user.rid}"/>Dlete</a></td>
+ </center>  
+ </tr>
+  
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+							</td>
+						</tr>
+					</table>
+			</tr>
+</table>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

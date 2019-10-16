@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>watch</title>
+</head>
+<body>
+
+	<form action="ans" method="get">
+		<table align="center">
+			<tr>
+				<!--<img th:src="@{/images/RTI_LOGO.png}">-->	
+				<img src="./images/RTI_LOGO.png">
+			</tr>
+			<tr>
+				<td>
+					<table style="background-color: #FFDEAD;width: 1350px;height: 150px">
+						<tr>
+							<td colspan="3" align="center" style="font-size: 30px;background-color: #D2691E;height: 10%">
+							<div th:text="'Welcome '+${anm}"/>
+							</td>
+						</tr>
+						<tr>
+						<td><br></td>
+						</tr>					
+		<tr>
+		<td align="center" style="font-size: 25px;padding-top:2px;">
+			Product Name:
+		</td>
+		<td>
+			<input type="text" name="pname"  autocomplete="off" style="font-size: 22px; margin-top: 2px;width: 50%" />
+		</td>
+	</tr>
+	  <tr>
+		<td align="center" style="font-size: 25px;padding-top:2px;">
+			Image : 
+		</td>
+	<td style="font-size: 20px;size:30px;font-style: normal;font-family: sans-serif;">
+    <input style="font-size: 20px;" required="required" type="file" name="file" />
+	</td>
+		
+	</tr>
+	<tr>
+		<td align="center" style="font-size: 25px;padding-top:2px;">
+			Price
+		</td>
+		<td>
+			<input type="text"  autocomplete="off" style="font-size: 22px; margin-top: 2px;width: 50%"  name="price"/>
+		</td>
+	</tr>
+	<tr>
+	
+	</tr>
+	<tr>
+		<td align="center" style="font-size: 25px;padding-top:2px;">
+			
+		</td>
+		<!--  <td>
+			<textarea rows="4" name="pmessage" placeholder="Enter Replay" style="font-size: 22px; margin-top: 2px;width: 50%"></textarea>
+		</td>-->
+	</tr>
+	<tr>
+<td align="center" colspan="2"><div th:text="${msg}"/></td>
+</tr>
+ 	<tr>
+		<td colspan="2" align="center" ForeColor="#003399" style="font-size: 20px;size:30px;font-style: normal;font-family: sans-serif;">
+		<!-- <button type="submit" style="font-size: 20px;" name="submit">Insert</button> -->
+		<input type="submit" name="submit" value="submit">
+		
+	</td>
+	</tr>	
+	<tr>
+	<td>
+	<br>
+	</td>
+	</tr>
+	
+		</table>
+	</form>
+</body>
+</html>
